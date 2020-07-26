@@ -1,0 +1,24 @@
+server:
+    port: 8080
+
+spring:
+    h2:
+        console:
+            enabled: true
+            path: /h2_db
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                show_sql: true
+                use_sql_comments: true
+                format_sql: true
+
+    datasource:
+        driver-class-name: org.h2.Driver
+    #    url: jdbc:h2:file:./h2_db;AUTO_SERVER=TRUE
+        url: jdbc:h2:tcp://localhost/~/test
+        username: sa
+        password: root
